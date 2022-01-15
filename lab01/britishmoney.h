@@ -4,7 +4,8 @@
 
 
 class BMoney {
-    friend BMoney Add(const BMoney &m1, const BMoney &m2); // друж ф-ям есть доступ к приват полям и ф-ям класса
+    // дружественным функциям есть доступ к приватным полям и функциям класса
+    friend BMoney Add(const BMoney &m1, const BMoney &m2);
     friend BMoney Subtract(const BMoney &m1, const BMoney &m2);
     friend BMoney Divide(BMoney &m1, BMoney &m2);
     friend bool Equal(const BMoney &m1, const BMoney &m2);
