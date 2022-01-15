@@ -35,36 +35,36 @@ BMoney::BMoney(std::istream &is) {
 
 
 bool Equal(const BMoney &m1, const BMoney &m2) {
-    if (m1.ps == m2.ps && m1.sh == m2.sh && m1.p == m2.p)
+    if (money1.ps == money2.ps && money1.sh == money2.sh && money1.p == money2.p)
         return 1;
     return 0;
 }
 
 bool NotEqual(const BMoney &m1, const BMoney &m2) {
-    if (m1.ps != m2.ps || m1.sh != m2.sh || m1.p != m2.p)
+    if (money1.ps != money2.ps || money1.sh != money2.sh || money1.p != money2.p)
         return 1;
     return 0;
     //return !Equal(m1, m2);
 }
 
 bool More(const BMoney &m1, const BMoney &m2) {
-    unsigned long long tmp1 = m1.ToPenny();
-    unsigned long long tmp2 = m2.ToPenny();
+    unsigned long long tmp1 = money1.ToPenny();
+    unsigned long long tmp2 = money2.ToPenny();
     if (tmp1 > tmp2)
         return 1;
     return 0;
 }
 
-bool LessEqual(const BMoney &m1, const BMoney &m2) {
-    return !More(m1, m2);
+bool LessEqual(const BMoney &money1, const BMoney &money2) {
+    return !More(money1, money2);
 }
 
-bool Less(const BMoney &m1, const BMoney &m2) {
-    return More(m2, m1);
+bool Less(const BMoney &money1, const BMoney &money2) {
+    return More(money2, money1);
 }
 
-bool MoreEqual(const BMoney &m1, const BMoney &m2) {
-    return !More(m2, m1);
+bool MoreEqual(const BMoney &money1, const BMoney &money2) {
+    return !More(money2, money1);
 }
 
 bool BMoney::Empty() const {
@@ -76,9 +76,9 @@ bool BMoney::Empty() const {
 
 BMoney Add(const BMoney& m1, const BMoney &m2) {
     BMoney res;
-    res.p = (m1.p + m2.p) % sh_p;
-    res.sh = (m1.sh + m2.sh + (m1.p + m2.p) / sh_p) % ps_sh;
-    res.ps = m1.ps + m2.ps + (m1.sh + m2.sh + (m1.p + m2.p) / sh_p) / ps_sh;
+    res.p = (money1.p + money2.p) % sh_p;
+    res.sh = (money1.sh + money2.sh + (money1.p + money2.p) / sh_p) % ps_sh;
+    res.ps = money1.ps + money2.ps + (money1.sh + money2.sh + (money1.p + money2.p) / sh_p) / ps_sh;
     return res;
 }
 
@@ -97,18 +97,18 @@ BMoney PtoSum(unsigned long long tmp_p) {
     return res;
 }
 
-BMoney Subtract(const BMoney &m1, const BMoney &m2) {
-    if (Less(m1, m2)) {
+BMoney Subtract(const BMoney &money1, const BMoney &money2) {
+    if (Less(money1, money2)) {
         std:: cout << "The operation could not be performed. The first sum is less than the second." << std:: endl;
         return BMoney(); // возвращение нулевого кошелька
     }
-    unsigned long long tmp = m1.ToPenny() - m2.ToPenny();
+    unsigned long long tmp = money1.ToPenny() - money2.ToPenny();
     return PtoSum(tmp);
 }
 
-BMoney Divide(BMoney &m1, BMoney &m2) {
-    if (!m2.Empty()) {
-        unsigned long long tmp = m1.ToPenny() / m2.ToPenny();
+BMoney Divide(BMoney &money1, BMoney &money2) {
+    if (!money2.Empty()) {
+        unsigned long long tmp = money1.ToPenny() / money2.ToPenny();
         return PtoSum(tmp);
     }
     std:: cout << "The operation could not be performed. The second sum equals null." << std:: endl;
