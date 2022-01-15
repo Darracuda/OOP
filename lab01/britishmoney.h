@@ -3,37 +3,37 @@
 #include <iostream>
 
 
-class BMoney {
+class BritishMoney {
     // дружественным функциям есть доступ к приватным полям и функциям класса
-    friend BMoney Add(const BMoney &money1, const BMoney &money2);
-    friend BMoney Subtract(const BMoney &money1, const BMoney &money2);
-    friend BMoney Divide(BMoney &money1, BMoney &money2);
-    friend bool Equal(const BMoney &money1, const BMoney &money2);
-    friend bool NotEqual(const BMoney &money1, const BMoney &money2);
-    friend bool More(const BMoney &money1, const BMoney &money2);
-    friend bool Less(const BMoney &money1, const BMoney &money2);
-    friend bool MoreEqual(const BMoney &money1, const BMoney &money2);
-    friend bool LessEqual(const BMoney &money1, const BMoney &money2);
-    friend BMoney PtoSum(unsigned long long tmp_p);
+    friend BritishMoney Add(const BritishMoney &money1, const BritishMoney &money2);
+    friend BritishMoney Subtract(const BritishMoney &money1, const BritishMoney &money2);
+    friend BritishMoney Divide(BritishMoney &money1, BritishMoney &m2);
+    friend bool Equal(const BritishMoney &money1, const BritishMoney &money2);
+    friend bool NotEqual(const BritishMoney &money1, const BritishMoney &money2);
+    friend bool More(const BritishMoney &money1, const BritishMoney &money2);
+    friend bool Less(const BritishMoney &money1, const BritishMoney &money2);
+    friend bool MoreEqual(const BritishMoney &money1, const BritishMoney &money2);
+    friend bool LessEqual(const BritishMoney &money1, const BritishMoney &money2);
+    friend BritishMoney PtoSum(unsigned long long tmp_p);
 
     public:
-        BMoney(); // явный конструктор по умолчанию (все равно 0)
-        BMoney(unsigned long long a, uint16_t b, uint16_t c); // конструктор с параметрами, инициализация напрямую в коде
-        BMoney(std::istream &is); // конструктор из istream
-        BMoney Divide_real(double C);
-        BMoney Multiply_real(double C);
+        BritishMoney(); // явный конструктор по умолчанию (все равно 0)
+        BritishMoney(unsigned long long a, unsigned char b, unsigned char c); // конструктор с параметрами, инициализация напрямую в коде
+        BritishMoney(std::istream &is); // конструктор из istream
+        BritishMoney Divide_real(double C);
+        BritishMoney Multiply_real(double C);
         void Print(std::ostream &os);
-        ~BMoney(); // деструктор
+        ~BritishMoney(); // деструктор
 
         unsigned long long ToPenny() const;
-        BMoney operator=(const BMoney &other);
+        BritishMoney operator=(const BritishMoney &other);
         void Translate();
         bool Empty() const;
 
     private:
-        unsigned long long ps;
-        uint16_t sh;
-        uint16_t p;
+        unsigned long long pounds;
+        unsigned char shillings;
+        unsigned char pennies;
 
 };
 #endif
