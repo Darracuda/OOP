@@ -74,7 +74,7 @@ bool BMoney::Empty() const {
 }
 
 
-BMoney Add(const BMoney& m1, const BMoney &m2) {
+BMoney Add(const BMoney& money1, const BMoney &money2) {
     BMoney res;
     res.p = (money1.p + money2.p) % sh_p;
     res.sh = (money1.sh + money2.sh + (money1.p + money2.p) / sh_p) % ps_sh;
