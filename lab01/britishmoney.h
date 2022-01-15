@@ -5,15 +5,15 @@
 
 class BMoney {
     // дружественным функциям есть доступ к приватным полям и функциям класса
-    friend BMoney Add(const BMoney &m1, const BMoney &m2);
-    friend BMoney Subtract(const BMoney &m1, const BMoney &m2);
-    friend BMoney Divide(BMoney &m1, BMoney &m2);
-    friend bool Equal(const BMoney &m1, const BMoney &m2);
-    friend bool NotEqual(const BMoney &m1, const BMoney &m2);
-    friend bool More(const BMoney &m1, const BMoney &m2);
-    friend bool Less(const BMoney &m1, const BMoney &m2);
-    friend bool MoreEqual(const BMoney &m1, const BMoney &m2);
-    friend bool LessEqual(const BMoney &m1, const BMoney &m2);
+    friend BMoney Add(const BMoney &money1, const BMoney &money2);
+    friend BMoney Subtract(const BMoney &money1, const BMoney &money2);
+    friend BMoney Divide(BMoney &money1, BMoney &money2);
+    friend bool Equal(const BMoney &money1, const BMoney &money2);
+    friend bool NotEqual(const BMoney &money1, const BMoney &money2);
+    friend bool More(const BMoney &money1, const BMoney &money2);
+    friend bool Less(const BMoney &money1, const BMoney &money2);
+    friend bool MoreEqual(const BMoney &money1, const BMoney &money2);
+    friend bool LessEqual(const BMoney &money1, const BMoney &money2);
     friend BMoney PtoSum(unsigned long long tmp_p);
 
     public:
