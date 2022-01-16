@@ -13,11 +13,13 @@
     "lab2:": "lab2",
     "lab3:": "lab3",
     "lab4:": "lab4",
-    "lab5:": "__in_progress__",
+    "lab5:": "lab5",
     "lab6:": "__in_progress__"
   },
   "reports": [
+    "lab01",
+    "lab02",
     "lab1",
-    "lab2"
+    "lab2",
     
 }
