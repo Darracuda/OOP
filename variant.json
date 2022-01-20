@@ -7,14 +7,14 @@
   ],
   "containers": ["TLinkedList", "TBinaryTree"],
   "finished_labs": {
-    "lab0.1:": "lab0_1",
-    "lab0.2:": "lab0_2",
-    "lab1:": "lab1",
-    "lab2:": "lab2",
-    "lab3:": "lab3",
-    "lab4:": "lab4",
-    "lab5:": "lab5",
-    "lab6:": "__in_progress__"
+    "lab0.1:5": "lab0_1",
+    "lab0.2:5": "lab0_2",
+    "lab1:5": "lab1",
+    "lab2:5": "lab2",
+    "lab3:5": "lab3",
+    "lab4:5": "lab4",
+    "lab5:5": "lab5",
+    "lab6:5": "lab6"
   },
   "reports": [
     "lab01",
@@ -22,5 +22,5 @@
     "lab1",
     "lab2",
     "lab5",
-    
+    "lab6"
 }
